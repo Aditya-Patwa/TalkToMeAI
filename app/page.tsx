@@ -10,7 +10,6 @@ import {
 } from '@/components/ai-elements/prompt-input';
 import { useState } from "react";
 import { useChat } from "@ai-sdk/react";
-import { Response } from "@/components/ai-elements/response";
 
 
 export default function Home() {
@@ -73,9 +72,9 @@ export default function Home() {
                             ) : (
                                 <div className="pb-4 border-b border-dashed" key={message.id}>
                                     {message.parts.map((part, i) =>
-                                        <Response key={`${message.id}-part${i}`}>
+                                        <p key={`${message.id}-part${i}`}>
                                             {part.type == "text" ? part.text : ""}
-                                        </Response>
+                                        </p>
                                     )}
                                 </div>
                             )
